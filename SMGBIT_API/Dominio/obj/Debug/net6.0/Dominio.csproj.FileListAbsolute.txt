@@ -1,0 +1,15 @@
+C:\Workspace\DesafioSMGBit\SMGBIT_API\Dominio\bin\Debug\net6.0\Dominio.deps.json
+C:\Workspace\DesafioSMGBit\SMGBIT_API\Dominio\bin\Debug\net6.0\Dominio.dll
+C:\Workspace\DesafioSMGBit\SMGBIT_API\Dominio\bin\Debug\net6.0\Dominio.pdb
+C:\Workspace\DesafioSMGBit\SMGBIT_API\Dominio\bin\Debug\net6.0\Entidades.dll
+C:\Workspace\DesafioSMGBit\SMGBIT_API\Dominio\bin\Debug\net6.0\Entidades.pdb
+C:\Workspace\DesafioSMGBit\SMGBIT_API\Dominio\obj\Debug\net6.0\Dominio.csproj.AssemblyReference.cache
+C:\Workspace\DesafioSMGBit\SMGBIT_API\Dominio\obj\Debug\net6.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Workspace\DesafioSMGBit\SMGBIT_API\Dominio\obj\Debug\net6.0\Dominio.AssemblyInfoInputs.cache
+C:\Workspace\DesafioSMGBit\SMGBIT_API\Dominio\obj\Debug\net6.0\Dominio.AssemblyInfo.cs
+C:\Workspace\DesafioSMGBit\SMGBIT_API\Dominio\obj\Debug\net6.0\Dominio.csproj.CoreCompileInputs.cache
+C:\Workspace\DesafioSMGBit\SMGBIT_API\Dominio\obj\Debug\net6.0\Dominio.csproj.CopyComplete
+C:\Workspace\DesafioSMGBit\SMGBIT_API\Dominio\obj\Debug\net6.0\Dominio.dll
+C:\Workspace\DesafioSMGBit\SMGBIT_API\Dominio\obj\Debug\net6.0\refint\Dominio.dll
+C:\Workspace\DesafioSMGBit\SMGBIT_API\Dominio\obj\Debug\net6.0\Dominio.pdb
+C:\Workspace\DesafioSMGBit\SMGBIT_API\Dominio\obj\Debug\net6.0\ref\Dominio.dll
