@@ -5,17 +5,17 @@ namespace Infraestrutura.Configuração
 {
     public class Contexto : DbContext
     {
-        public DbSet<Viagens> Viagens { get; set; }
-        public DbSet<Frete> Fretes { get; set; }
+        public DbSet<TabelaViagem> Viagens { get; set; }
+        public DbSet<TabelaFrete> Fretes { get; set; }
 
         public Contexto(DbContextOptions<Contexto> opcoes): base(opcoes) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Frete>()
+            modelBuilder.Entity<TabelaFrete>()
                         .HasOne(f => f.Viagem)
-                        .WithOne(v => v.Frete)
-                        .HasForeignKey<Frete>(f => f.ViagemId);
+                        .WithOne(v => v.TabelaFrete)
+                        .HasForeignKey<TabelaFrete>(f => f.ViagemId);
 
             base.OnModelCreating(modelBuilder);
         }

@@ -9,8 +9,16 @@ namespace Aplicação.Interfaces
 {
     public interface IAplicacaoViagens
     {
-        Task Salvar(Viagens viagens);
+        Task Salvar(TabelaViagem viagens);
 
-        Task SalvarViagens(Viagens viagens);
+        Task SalvarViagens(TabelaViagem viagens);
+
+        Task<List<TabelaViagem>> ListarViagens();
+
+        Task<List<TabelaFrete>> ListarFretes();
+
+        Task<List<TabelaViagem>> ListarV();
+
+        Task<List<TabelaFrete>> ListarF();
     }
 }

@@ -13,7 +13,17 @@ namespace Dominio.Serviços
             _IViagens = IViagens;
         }
 
-        public async Task SalvarViagens(Viagens viagens)
+        public async Task<List<TabelaFrete>> ListarFretes()
+        {
+           return await _IViagens.ListarF();
+        }
+
+        public async Task<List<TabelaViagem>> ListarViagens()
+        {
+           return await _IViagens.ListarV();
+        }
+
+        public async Task SalvarViagens(TabelaViagem viagens)
         {
             await _IViagens.Salvar(viagens);
         }

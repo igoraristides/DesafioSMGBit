@@ -22,7 +22,7 @@ namespace Infraestrutura.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Entidades.Entidades.Frete", b =>
+            modelBuilder.Entity("Entidades.Entidades.TabelaFrete", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -30,6 +30,10 @@ namespace Infraestrutura.Migrations
 
                     b.Property<string>("Cliente")
                         .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Destino")
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
@@ -52,16 +56,14 @@ namespace Infraestrutura.Migrations
                     b.ToTable("Fretes");
                 });
 
-            modelBuilder.Entity("Entidades.Entidades.Viagens", b =>
+            modelBuilder.Entity("Entidades.Entidades.TabelaViagem", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Caixas")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<int>("Caixas")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("DataViagem")
                         .HasColumnType("datetime2");
@@ -108,25 +110,28 @@ namespace Infraestrutura.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
+                    b.Property<int>("ValorViagem")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Viagens");
                 });
 
-            modelBuilder.Entity("Entidades.Entidades.Frete", b =>
+            modelBuilder.Entity("Entidades.Entidades.TabelaFrete", b =>
                 {
-                    b.HasOne("Entidades.Entidades.Viagens", "Viagem")
-                        .WithOne("Frete")
-                        .HasForeignKey("Entidades.Entidades.Frete", "ViagemId")
+                    b.HasOne("Entidades.Entidades.TabelaViagem", "Viagem")
+                        .WithOne("TabelaFrete")
+                        .HasForeignKey("Entidades.Entidades.TabelaFrete", "ViagemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Viagem");
                 });
 
-            modelBuilder.Entity("Entidades.Entidades.Viagens", b =>
+            modelBuilder.Entity("Entidades.Entidades.TabelaViagem", b =>
                 {
-                    b.Navigation("Frete")
+                    b.Navigation("TabelaFrete")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

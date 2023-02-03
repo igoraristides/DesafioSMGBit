@@ -4,6 +4,8 @@ namespace Dominio.Interfaces
 {
     public interface IServiçoViagens
     {
-        Task SalvarViagens(Viagens viagens);
+        Task SalvarViagens(TabelaViagem viagens);
+        Task<List<TabelaViagem>> ListarViagens();
+        Task<List<TabelaFrete>> ListarFretes();
     }
 }

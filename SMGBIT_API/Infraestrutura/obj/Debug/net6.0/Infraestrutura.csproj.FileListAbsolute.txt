@@ -1,4 +1,5 @@
 C:\Workspace\DesafioSMGBit\SMGBIT_API\Infraestrutura\bin\Debug\net6.0\Infraestrutura.deps.json
+C:\Workspace\DesafioSMGBit\SMGBIT_API\Infraestrutura\bin\Debug\net6.0\Infraestrutura.runtimeconfig.json
 C:\Workspace\DesafioSMGBit\SMGBIT_API\Infraestrutura\bin\Debug\net6.0\Infraestrutura.dll
 C:\Workspace\DesafioSMGBit\SMGBIT_API\Infraestrutura\bin\Debug\net6.0\Infraestrutura.pdb
 C:\Workspace\DesafioSMGBit\SMGBIT_API\Infraestrutura\bin\Debug\net6.0\Dominio.dll
@@ -14,6 +15,5 @@ C:\Workspace\DesafioSMGBit\SMGBIT_API\Infraestrutura\obj\Debug\net6.0\Infraestru
 C:\Workspace\DesafioSMGBit\SMGBIT_API\Infraestrutura\obj\Debug\net6.0\Infraestrutura.dll
 C:\Workspace\DesafioSMGBit\SMGBIT_API\Infraestrutura\obj\Debug\net6.0\refint\Infraestrutura.dll
 C:\Workspace\DesafioSMGBit\SMGBIT_API\Infraestrutura\obj\Debug\net6.0\Infraestrutura.pdb
-C:\Workspace\DesafioSMGBit\SMGBIT_API\Infraestrutura\obj\Debug\net6.0\ref\Infraestrutura.dll
-C:\Workspace\DesafioSMGBit\SMGBIT_API\Infraestrutura\bin\Debug\net6.0\Infraestrutura.runtimeconfig.json
 C:\Workspace\DesafioSMGBit\SMGBIT_API\Infraestrutura\obj\Debug\net6.0\Infraestrutura.genruntimeconfig.cache
+C:\Workspace\DesafioSMGBit\SMGBIT_API\Infraestrutura\obj\Debug\net6.0\ref\Infraestrutura.dll
