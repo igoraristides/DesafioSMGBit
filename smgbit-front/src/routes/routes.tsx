@@ -1,7 +1,8 @@
-import { Route, Routes } from "react-router-dom";
-import Layout from "../components/Layout/Layout";
-import UploadPage from "../pages/uploadPage/UploadPage";
-import { ViewTrip } from "../pages/viewTrips/ViewTrip";
+import { Route, Routes } from 'react-router-dom';
+import Layout from '../components/Layout/Layout';
+import Frete from '../pages/frete/Frete';
+import UploadPage from '../pages/uploadPage/UploadPage';
+import ViewTrip from '../pages/viewTrips/ViewTrip';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -11,6 +12,14 @@ const AppRoutes: React.FC = () => {
         element={
           <Layout>
             <ViewTrip />
+          </Layout>
+        }
+      />
+      <Route
+        path="/fretes"
+        element={
+          <Layout>
+            <Frete />
           </Layout>
         }
       />

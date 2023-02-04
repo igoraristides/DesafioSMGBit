@@ -1,11 +1,11 @@
-import { IStyle, IStyleFunctionOrObject, ITheme } from "@fluentui/react";
+import { IStyle, IStyleFunctionOrObject, ITheme } from '@fluentui/react';
 
 export interface IFileUploadProps {
   styles?: IStyleFunctionOrObject<IFileUploadStylesProps, IFileUploadStyles>;
   theme?: ITheme;
 }
 
-export type IFileUploadStylesProps = Pick<IFileUploadProps, "theme">;
+export type IFileUploadStylesProps = Pick<IFileUploadProps, 'theme'>;
 
 export interface IFileUploadStyles {
   root?: IStyle;

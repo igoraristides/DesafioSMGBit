@@ -26,7 +26,8 @@ builder.Services.AddSingleton<IServiçoViagens, ServicoViagens>();
 //APLICAÇÃO
 builder.Services.AddSingleton<IAplicacaoViagens, AplicacaoViagens>();
 
-var config = new MapperConfiguration(cfg => {
+var config = new MapperConfiguration(cfg =>
+{
 
 
     cfg.CreateMap<Viagem, TabelaViagem>()
@@ -36,6 +37,7 @@ var config = new MapperConfiguration(cfg => {
 
     cfg.CreateMap<Frete, TabelaFrete>()
         .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id));
+
 });
 
 var mapper = config.CreateMapper();
@@ -47,6 +49,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(o => o.AddPolicy("Cors", builder =>
+{
+    builder.AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader();
+}));
+
 var app = builder.Build();
 
 
@@ -54,6 +63,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseCors("Cors");
 }
 
 app.UseHttpsRedirection();

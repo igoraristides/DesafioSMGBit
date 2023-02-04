@@ -1,47 +1,49 @@
-import { IFileType } from "../components/FileUpload/FileUpload.types";
-import Doc from "../assets/doc.png";
-import Jpg from "../assets/jpg.png";
-import Png from "../assets/png.png";
-import Pdf from "../assets/pdf.png";
-import Ppt from "../assets/ppt.png";
-import Xls from "../assets/xls.png";
-import Zip from "../assets/zip.png";
+import { IFileType } from '../components/FileUpload/FileUpload.types';
+import Doc from '../assets/doc.png';
+import Jpg from '../assets/jpg.png';
+import Png from '../assets/png.png';
+import Pdf from '../assets/pdf.png';
+import Ppt from '../assets/ppt.png';
+import Xls from '../assets/xls.png';
+import Zip from '../assets/zip.png';
 
 export const FileTypes: IFileType[] = [
   {
-    filetype: "doc",
+    filetype: 'doc',
     fileImageName: Doc,
   },
   {
-    filetype: "docx",
+    filetype: 'docx',
     fileImageName: Doc,
   },
   {
-    filetype: "jpg",
+    filetype: 'jpg',
     fileImageName: Jpg,
   },
   {
-    filetype: "png",
+    filetype: 'png',
     fileImageName: Png,
   },
   {
-    filetype: "pdf",
+    filetype: 'pdf',
     fileImageName: Pdf,
   },
   {
-    filetype: "ppt",
+    filetype: 'ppt',
     fileImageName: Ppt,
   },
   {
-    filetype: "xls",
+    filetype: 'xls',
     fileImageName: Xls,
   },
   {
-    filetype: "xlsx",
+    filetype: 'xlsx',
     fileImageName: Xls,
   },
   {
-    filetype: "zip",
+    filetype: 'zip',
     fileImageName: Zip,
   },
 ];
+
+export const TiposArquivosPermitidos = '.doc, .docx, .jpg, .png, .pdf, .ppt, .xlx, .xlsx, .zip';

@@ -1,10 +1,3 @@
-C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\obj\Debug\net6.0\WebApi.csproj.AssemblyReference.cache
-C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\obj\Debug\net6.0\WebApi.GeneratedMSBuildEditorConfig.editorconfig
-C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\obj\Debug\net6.0\WebApi.AssemblyInfoInputs.cache
-C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\obj\Debug\net6.0\WebApi.AssemblyInfo.cs
-C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\obj\Debug\net6.0\WebApi.csproj.CoreCompileInputs.cache
-C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\obj\Debug\net6.0\WebApi.MvcApplicationPartsAssemblyInfo.cs
-C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\obj\Debug\net6.0\WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\appsettings.Development.json
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\appsettings.json
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\Utils\tabela-frete.json
@@ -20,6 +13,7 @@ C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\ClosedXML.dll
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\ExcelNumberFormat.dll
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\Humanizer.dll
+C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\Irony.dll
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
@@ -52,6 +46,7 @@ C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\Microsoft.SqlServe
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\Mono.TextTemplating.dll
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\SixLabors.Fonts.dll
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -67,6 +62,7 @@ C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\System.Security.Pe
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\System.Text.Encodings.Web.dll
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\System.Text.Json.dll
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\XLParser.dll
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
@@ -88,6 +84,13 @@ C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\Aplicação.pdb
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\Infraestrutura.pdb
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\Dominio.pdb
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\Entidades.pdb
+C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\obj\Debug\net6.0\WebApi.csproj.AssemblyReference.cache
+C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\obj\Debug\net6.0\WebApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\obj\Debug\net6.0\WebApi.AssemblyInfoInputs.cache
+C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\obj\Debug\net6.0\WebApi.AssemblyInfo.cs
+C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\obj\Debug\net6.0\WebApi.csproj.CoreCompileInputs.cache
+C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\obj\Debug\net6.0\WebApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\obj\Debug\net6.0\WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\obj\Debug\net6.0\staticwebassets\msbuild.WebApi.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\obj\Debug\net6.0\staticwebassets\msbuild.build.WebApi.props
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.WebApi.props
@@ -102,6 +105,3 @@ C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\obj\Debug\net6.0\refint\WebApi.dll
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\obj\Debug\net6.0\WebApi.pdb
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\obj\Debug\net6.0\WebApi.genruntimeconfig.cache
 C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\obj\Debug\net6.0\ref\WebApi.dll
-C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\Irony.dll
-C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\SixLabors.Fonts.dll
-C:\Workspace\DesafioSMGBit\SMGBIT_API\WebApi\bin\Debug\net6.0\XLParser.dll

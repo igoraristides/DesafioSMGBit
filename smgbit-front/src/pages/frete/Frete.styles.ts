@@ -1,7 +1,7 @@
 import { IStyleFunction } from '@fluentui/react';
-import { IViewTripStyles, IViewTripStylesProps } from './ViewTrip.types';
+import { IFreteStyles, IFreteStylesProps } from './Frete.types';
 
-export const getStyles: IStyleFunction<IViewTripStylesProps, IViewTripStyles> = (props) => ({
+export const getStyles: IStyleFunction<IFreteStylesProps, IFreteStyles> = (props) => ({
   root: {
     height: '100%',
     width: '100%',

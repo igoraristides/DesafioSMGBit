@@ -1,11 +1,10 @@
 ﻿using Aplicação.Interfaces;
-using Microsoft.AspNetCore.Mvc;
-using ClosedXML.Excel;
-using static WebApi.Modelos.ProcessamentoModelos;
-using Newtonsoft.Json;
-using Entidades.Entidades;
 using AutoMapper;
-using DocumentFormat.OpenXml.Bibliography;
+using ClosedXML.Excel;
+using Entidades.Entidades;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using static WebApi.Modelos.ProcessamentoModelos;
 
 namespace WebApi.Controllers
 {
@@ -90,33 +89,70 @@ namespace WebApi.Controllers
                             }
                         }
 
-                        //Persistir dados processados no banco
 
                         foreach (var item in listaDeViagens)
                         {
-                            TabelaViagem tabelaViagens = _mapper.Map<TabelaViagem>(item);
+                            var freteId = Guid.NewGuid();
 
-                            await _IAplicacaoViagens.SalvarViagens(tabelaViagens);
+                            var viagemId = Guid.NewGuid();
+
+                            TabelaFrete tabelaFrete = new()
+                            {
+                                Id = freteId,
+                                Valor = item.TabelaFrete.Valor,
+                                TipoVeiculo = item.TabelaFrete.TipoVeiculo,
+                                Cliente = item.TabelaFrete.TipoVeiculo,
+                                Destino = item.TabelaFrete.Destino,
+                                ViagemId = viagemId,
+                            };
+
+                            TabelaViagem tabelaViagem = new()
+                            {
+                                Id = viagemId,
+                                DataViagem = item.DataViagem,
+                                NumeroViagem = item.NumeroViagem,
+                                Motorista = item.Motorista,
+                                Placa = item.Placa,
+                                TipoVeiculo = item.TipoVeiculo,
+                                Origem = item.Origem,
+                                Destino = item.Destino,
+                                Caixas = item.Caixas,
+                                KmRodados = item.KmRodados,
+                                TipoViagem = item.TipoViagem,
+                                Entregas = item.Entregas,
+                                ValorViagem = item.ValorViagem,
+                                FreteId = freteId,
+                                TabelaFrete = tabelaFrete
+                            };
+
+                            tabelaViagem.TabelaFrete.ViagemId = viagemId;
+
+
+                            //Persistir dados processados no banco
+                            await _IAplicacaoViagens.SalvarViagens(tabelaViagem);
                         }
                     }
 
-                    return Ok(listaDeViagens);
+                    return Ok(new ResultadoProcessamento(listaDeViagens, null));
 
                 }
                 catch
                 {
-                    return BadRequest($"Erro ao proccessar o arquivo, por favor verifique o arquivo fornecido");
+                    return BadRequest(new ResultadoProcessamento(null, "Erro ao proccessar o arquivo, por favor verifique o arquivo fornecido ou sua conexão com o banco de dados"));
                 }
             }
             else
             {
-                return BadRequest($"O formato de arquivo '{extensao}'ainda não é permitido, por favor insira um arquivo com extensão xlsx");
+                return BadRequest(new ResultadoProcessamento(null, $"O formato de arquivo '{extensao}' ainda não é permitido, por favor insira um arquivo com extensão xlsx"));
             }
 
         }
         [HttpGet("api/viagens-processadas")]
         public async Task<IActionResult> ConsumirViagensProcessadas()
         {
+
+            List<Viagem> listaDeViagens = new();
+
             var resultadoViagens = await _IAplicacaoViagens.ListarViagens();
 
             var resultadoFrete = await _IAplicacaoViagens.ListarFretes();
@@ -127,8 +163,55 @@ namespace WebApi.Controllers
 
                 item.TabelaFrete = frete;
             }
-            
-            return Ok (resultadoViagens);
+
+            foreach (var item in resultadoViagens)
+            {
+                Frete frete = new()
+                {
+                    Id = item.TabelaFrete.Id,
+                    Valor = item.TabelaFrete.Valor,
+                    TipoVeiculo = item.TabelaFrete.TipoVeiculo,
+                    Destino = item.TabelaFrete.Destino,
+                    Cliente = item.TabelaFrete.Cliente,
+                };
+
+
+                Viagem viagem = new()
+                {
+                    DataViagem = item.DataViagem,
+                    NumeroViagem = item.NumeroViagem,
+                    Motorista = item.Motorista,
+                    Placa = item.Placa,
+                    TipoVeiculo = item.TipoVeiculo,
+                    Origem = item.Origem,
+                    Destino = item.Destino,
+                    Caixas = item.Caixas,
+                    KmRodados = item.KmRodados,
+                    TipoViagem = item.TipoViagem,
+                    Entregas = item.Entregas,
+                    TabelaFrete = frete,
+                    ValorViagem = item.ValorViagem
+
+                };
+
+                listaDeViagens.Add(viagem);
+            }
+            return Ok(new ResultadoProcessamento(listaDeViagens, null));
+        }
+
+        [HttpGet("api/fretes")]
+
+        public async Task<ActionResult> ConsumirFretes()
+        {
+            string pathFretes = "Utils/tabela-frete.json";
+
+            string fretes = System.IO.File.ReadAllText(pathFretes);
+
+            Dictionary<string, Frete> dicionarioFrete = JsonConvert.DeserializeObject<Dictionary<string, Frete>>(fretes);
+
+            List<Frete> frete = dicionarioFrete.Values.ToList();
+
+            return Ok(frete);
         }
     }
 }

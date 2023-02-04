@@ -49,5 +49,18 @@ namespace WebApi.Modelos
             [JsonProperty("client")]
             public string Cliente { get; set; }
         }
+
+        public class ResultadoProcessamento
+        {
+            public ResultadoProcessamento(List<Viagem>? resultado, string? erro)
+            {
+                Resultado = resultado;
+                Erro = erro;
+            }
+
+            public List<Viagem>? Resultado { get; set; }
+
+            public string? Erro { get; set; }   
+        }
     }
 }
