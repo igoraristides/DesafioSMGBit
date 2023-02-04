@@ -21,10 +21,10 @@ OBS: Vale ressaltar que há a necessidade deter dessas IDE para não ter problem
 - Primeiramente clona-se o projeto localizado nesta url;
 - Após a clonagem, deve-se instalar as dependências do fron-end, para isso navegue até (...caminho da clonagem) + DesafioSMGBit\smgbit-front e execute  o comando npm i.
 - Em seguida, navegue até a pasta (...caminho da clonagem) + DesafioSMGBit\SMGBIT_API\WebApi\appsettings.json e altere os dados de conexão do banco para o seu banco, ou a intancia desejada.
-- Como orientado, recomenda-se a instalação do MSSQL, para que seja possível a importação do arquivo localizado [aqui](https://1drv.ms/u/s!Ak09YU0NDHQthLsmAnq7TN7uszGHpg?e=Kaaw7U). Este arquivodetém como objetivo facilitar, contendo a base já criada e os dois arquivos já persistidos no banco. Mas caso queira executar em uma base vazia localizada na sua instancia, só há a necessidade de atualizar o banco no appsettings.json como já comentado e executar esse comando no Console do gerenciador de pacotes dentro do pacote de infraestrutura (pode ser encontrado no visual studio em Ferramentas-> Gerenciador de pacotes Nuget->Console do gerenciador de pacotes): Update-Database -Context Contexto;
+- Como orientado, recomenda-se a instalação do MSSQL, para que seja possível a importação do arquivo localizado [aqui](https://1drv.ms/u/s!Ak09YU0NDHQthLsmAnq7TN7uszGHpg?e=Kaaw7U). Este arquivodetém como objetivo facilitar, contendo a base já criada e os dois arquivos já persistidos no banco. Mas caso queira executar em uma base vazia localizada na sua instancia, só há a necessidade de atualizar o banco no appsettings.json como já comentado e executar esse comando no Console do gerenciador de pacotes dentro do projeto de infraestrutura (pode ser encontrado no visual studio em Ferramentas-> Gerenciador de pacotes Nuget->Console do gerenciador de pacotes): Update-Database -Context Contexto;
 - Caso esteja tudo configurado o back-end e front-end estarão aptos para execução.
 - Primeiramente execute na pasta do front-end o comando npm-start;
-- Após isso execute na pasta do projeto WebApi do backend : dotnet run, ou é possível executar via IDE;
+- Após isso execute na pasta do projeto WebApi do backend : dotnet run, ou é possível executar via IDE Visual Studio Community;
 - Assim finalizando esse passo a passo.
 
 
