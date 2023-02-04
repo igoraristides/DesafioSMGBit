@@ -10,4 +10,5 @@ export type IFreteStylesProps = Pick<IFreteProps, 'theme'>;
 export interface IFreteStyles {
   root?: IStyle;
   label?: IStyle;
+  card?: IStyle;
 }

@@ -5,13 +5,13 @@ import { toast } from 'react-toastify';
 import { consumirViagensProcessadas } from '../../api/api';
 import { IResultado, IViagem } from '../../api/api.schema';
 import Tabela from '../../components/TabelaViagem/Tabela';
-import { formatadorDeData } from '../../Utilidades/helpers';
-import { getStyles } from './ViewTrip.styles';
-import { IViewTripProps, IViewTripStyles, IViewTripStylesProps } from './ViewTrip.types';
+import { formatadorDeData } from '../../utils/helpers';
+import { getStyles } from './Visualizar.styles';
+import { IVisualizarProps, IVisualizarStyles, IVisualizarStylesProps } from './Visualizar.types';
 
-const getClassNames = classNamesFunction<IViewTripStylesProps, IViewTripStyles>();
+const getClassNames = classNamesFunction<IVisualizarStylesProps, IVisualizarStyles>();
 
-const ViewTrip: React.FC<IViewTripProps> = (props) => {
+const Visualizar: React.FC<IVisualizarProps> = (props) => {
   const { styles, theme } = props;
 
   const classNames = getClassNames(styles, { theme });
@@ -82,7 +82,7 @@ const ViewTrip: React.FC<IViewTripProps> = (props) => {
       <Stack verticalFill verticalAlign="center" horizontalAlign="center">
         <FontIcon iconName="DeliveryTruck" style={{ fontSize: '24px', color: '#000' }} />
         <span className={classNames.label}>Viagens</span>
-        <Stack style={{ boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)', marginTop: 50, width: '100%', padding: '10' }}>
+        <Stack className={classNames.card}>
           <Tabela itens={viagens} colunas={colunas} carregando={carregando} />
         </Stack>
       </Stack>
@@ -90,4 +90,4 @@ const ViewTrip: React.FC<IViewTripProps> = (props) => {
   );
 };
 
-export default styled<IViewTripProps, IViewTripStylesProps, IViewTripStyles>(ViewTrip, getStyles);
+export default styled<IVisualizarProps, IVisualizarStylesProps, IVisualizarStyles>(Visualizar, getStyles);

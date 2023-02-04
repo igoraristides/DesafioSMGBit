@@ -4,7 +4,7 @@ import { ITabelaStyles, ITabelaStylesProps } from './Tabela.types';
 export const getStyles: IStyleFunction<ITabelaStylesProps, ITabelaStyles> = (props) => ({
   root: {},
 
-  tableLabel: {
+  labelTabela: {
     fontSize: '16px',
     marginTop: '30px',
     marginBottom: '30px',

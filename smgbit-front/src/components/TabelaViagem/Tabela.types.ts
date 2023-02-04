@@ -13,7 +13,7 @@ export type ITabelaStylesProps = Pick<ITabelaProps, 'theme'>;
 
 export interface ITabelaStyles {
   root?: IStyle;
-  tableLabel?: IStyle;
+  labelTabela?: IStyle;
   filtro?: IStyle;
   tabelaB?: IStyle;
   imagem?: IStyle;

@@ -1,17 +1,17 @@
 import { Route, Routes } from 'react-router-dom';
 import Layout from '../components/Layout/Layout';
 import Frete from '../pages/frete/Frete';
-import UploadPage from '../pages/uploadPage/UploadPage';
-import ViewTrip from '../pages/viewTrips/ViewTrip';
+import Upload from '../pages/upload/Upload';
+import Visualizar from '../pages/visualizar/Visualizar';
 
 const AppRoutes: React.FC = () => {
   return (
     <Routes>
       <Route
-        path="/view-trip"
+        path="/visualizar"
         element={
           <Layout>
-            <ViewTrip />
+            <Visualizar />
           </Layout>
         }
       />
@@ -27,7 +27,7 @@ const AppRoutes: React.FC = () => {
         path="/"
         element={
           <Layout>
-            <UploadPage />
+            <Upload />
           </Layout>
         }
       />

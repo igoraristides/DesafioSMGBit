@@ -1,16 +1,15 @@
 import { IStyleFunction } from '@fluentui/react';
-import { IFileUploadStyles, IFileUploadStylesProps } from './FileUpload.types';
+import { IUploadArquivoStyles, IUploadArquivoStylesProps } from './UploadArquivo.types';
 
-export const getStyles: IStyleFunction<IFileUploadStylesProps, IFileUploadStyles> = (props) => ({
+export const getStyles: IStyleFunction<IUploadArquivoStylesProps, IUploadArquivoStyles> = (props) => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
-    //boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
     background: '#fff',
   },
 
-  images: {
+  imagens: {
     display: 'flex',
     flexDirection: 'column',
     marginTop: '20px',

@@ -5,7 +5,7 @@ import { IMenuProps, IMenuStyles, IMenuStylesProps, NavKeys } from './Menu.types
 import Logo from '../../assets/logo.png';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { VerrificarRota } from '../../Utilidades/helpers';
+import { VerrificarRota } from '../../utils/helpers';
 
 const getClassNames = classNamesFunction<IMenuStylesProps, IMenuStyles>();
 
@@ -39,7 +39,7 @@ const Menu: React.FC<IMenuProps> = (props) => {
           icon: 'DeliveryTruck',
           key: NavKeys.VISUALIZAR,
           target: '_blank',
-          onClick: () => navigate('/view-trip'),
+          onClick: () => navigate('/visualizar'),
         },
         {
           name: 'Consultar Frete',

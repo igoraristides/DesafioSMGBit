@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import { consumirFretes } from '../../api/api';
 import { IFrete, IResultado, IViagem } from '../../api/api.schema';
 import Tabela from '../../components/TabelaViagem/Tabela';
-import { formatadorDeData } from '../../Utilidades/helpers';
+import { formatadorDeData } from '../../utils/helpers';
 import { getStyles } from './Frete.styles';
 
 import { IFreteProps, IFreteStyles, IFreteStylesProps } from './Frete.types';
@@ -47,7 +47,15 @@ const Frete: React.FC<IFreteProps> = (props) => {
         }
       },
     },
-    { key: 'valor', name: 'Valor do Frete', fieldName: 'valor', minWidth: 130 },
+    {
+      key: 'valor',
+      name: 'Valor do Frete',
+      fieldName: 'valor',
+      minWidth: 130,
+      onRender: (item: IFrete) => {
+        return `R$ ${item.valor},00`;
+      },
+    },
   ];
 
   return (
@@ -55,7 +63,7 @@ const Frete: React.FC<IFreteProps> = (props) => {
       <Stack verticalFill verticalAlign="center" horizontalAlign="center">
         <FontIcon iconName="Money" style={{ fontSize: '24px', color: '#000' }} />
         <span className={classNames.label}>Frete</span>
-        <Stack style={{ boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)', marginTop: 50, width: '100%', padding: '10' }}>
+        <Stack className={classNames.card}>
           <Tabela itens={frete} colunas={colunas} carregando={carregando} />
         </Stack>
       </Stack>

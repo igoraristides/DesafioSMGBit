@@ -1,29 +1,27 @@
 import { classNamesFunction, FontIcon, IColumn, IconButton, Image, PrimaryButton, Spinner, SpinnerSize, Stack, styled } from '@fluentui/react';
-import { getStyles } from './FileUpload.styles';
-import { IFileType, IFileUploadProps, IFileUploadStyles, IFileUploadStylesProps } from './FileUpload.types';
+import { getStyles } from './UploadArquivo.styles';
+import { ITiposArquivos, IUploadArquivoProps, IUploadArquivoStyles, IUploadArquivoStylesProps } from './UploadArquivo.types';
 
 import { useState } from 'react';
-import { FileTypes, TiposArquivosPermitidos } from '../../Constants/constants';
+import { TiposDeArquivos, TiposArquivosPermitidos } from '../../constants/Constantes';
 import { toast } from 'react-toastify';
 import { processarArquivo } from '../../api/api';
 import { IResultado, IViagem } from '../../api/api.schema';
 import Tabela from '../TabelaViagem/Tabela';
-import { formatadorDeData } from '../../Utilidades/helpers';
+import { formatadorDeData } from '../../utils/helpers';
 import { AxiosError } from 'axios';
 
-const getClassNames = classNamesFunction<IFileUploadStylesProps, IFileUploadStyles>();
+const getClassNames = classNamesFunction<IUploadArquivoStylesProps, IUploadArquivoStyles>();
 
-const FileUpload: React.FC<IFileUploadProps> = (props) => {
+const UploadArquivo: React.FC<IUploadArquivoProps> = (props) => {
   const { styles, theme } = props;
 
   const classNames = getClassNames(styles, { theme });
 
-  const [file, setFile] = useState<File | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [arquivo, setArquivo] = useState<File | null>(null);
+  const [carregando, setCarregando] = useState<boolean>(false);
 
   const [arquivoProcessado, setArquivoProcessado] = useState<IViagem[]>([]);
-
-  console.log(arquivoProcessado);
 
   const colunas: IColumn[] = [
     { key: 'origem', name: 'Origem', fieldName: 'origem', minWidth: 120 },
@@ -48,7 +46,6 @@ const FileUpload: React.FC<IFileUploadProps> = (props) => {
       name: 'Km(s) Rodados',
       fieldName: 'kmRodados',
       minWidth: 120,
-
       isResizable: true,
       onRender: (item: IViagem) => {
         return `${item.kmRodados} quilômetros`;
@@ -61,7 +58,6 @@ const FileUpload: React.FC<IFileUploadProps> = (props) => {
       name: 'Valor Total',
       fieldName: 'valorViagem',
       minWidth: 80,
-
       isResizable: true,
       onRender: (item: IViagem) => {
         return `R$ ${item.valorViagem},00`;
@@ -69,29 +65,29 @@ const FileUpload: React.FC<IFileUploadProps> = (props) => {
     },
   ];
 
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const OnChangeArquivo = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (VerificarSeExisteViagens()) setArquivoProcessado([]);
-    setFile(event.target.files?.[0] || null);
+    setArquivo(event.target.files?.[0] || null);
   };
 
   const enviarArquivo = () => {
-    if (!file) return;
+    if (!arquivo) return;
 
-    setLoading(true);
+    setCarregando(true);
 
     const formData = new FormData();
 
-    formData.append('arquivo', file);
+    formData.append('arquivo', arquivo);
 
     processarArquivo(formData)
       .then((result) => {
         setArquivoProcessado(result.data.resultado);
-        toast.success('Arquivo Processado e salvo com sucesso.');
+        toast.success('Arquivo processado e salvo com sucesso.');
       })
       .catch((error: AxiosError<IResultado>) => toast.error(error.response?.data.erro))
       .finally(() => {
-        setFile(null);
-        setLoading(false);
+        setArquivo(null);
+        setCarregando(false);
       });
   };
 
@@ -105,27 +101,27 @@ const FileUpload: React.FC<IFileUploadProps> = (props) => {
     );
   };
 
-  const OnRenderFileType = (): React.ReactNode => {
-    if (file != null) {
-      let fileExtension: string | undefined = file.name.split('.').at(-1);
+  const RenderTipoArquivo = (): React.ReactNode => {
+    if (arquivo != null) {
+      let extensaoArquivo: string | undefined = arquivo.name.split('.').at(-1);
 
-      let fileType: IFileType | undefined = FileTypes.find((e) => e.filetype == fileExtension);
+      let tipoArquivo: ITiposArquivos | undefined = TiposDeArquivos.find((e) => e.tipoArquivo == extensaoArquivo);
 
-      if (fileType)
+      if (tipoArquivo)
         return (
-          <Stack className={classNames.images} style={{ width: '30%' }}>
-            {loading ? (
+          <Stack className={classNames.imagens} style={{ width: '30%' }}>
+            {carregando ? (
               <Spinner label="Processando o arquivo enviado..." ariaLive="assertive" size={SpinnerSize.large} />
             ) : (
               <Stack>
                 <span style={{ marginBottom: '15px' }}>Arquivo selecionado:</span>
                 <Stack horizontal horizontalAlign="space-between" verticalAlign="center" style={{ width: '100%' }}>
                   <Stack horizontal verticalAlign="center">
-                    <Image src={fileType.fileImageName} alt="logo" width={60} height={70} />
-                    <span style={{ marginLeft: '20px' }}>{file.name}</span>
+                    <Image src={tipoArquivo.pathTipoArquivo} alt="logo" width={60} height={70} />
+                    <span style={{ marginLeft: '20px' }}>{arquivo.name}</span>
                   </Stack>
                   <Stack horizontal>
-                    <IconButton iconProps={{ iconName: 'Delete' }} onClick={() => setFile(null)} />
+                    <IconButton iconProps={{ iconName: 'Delete' }} onClick={() => setArquivo(null)} />
                   </Stack>
                 </Stack>
                 <PrimaryButton style={{ marginTop: '15px' }} iconProps={{ iconName: 'Send' }} onClick={() => enviarArquivo()}>
@@ -144,17 +140,17 @@ const FileUpload: React.FC<IFileUploadProps> = (props) => {
         <FontIcon iconName="Upload" style={{ fontSize: '24px', color: '#000' }} />
         <span className={classNames.label}>Módulo de Upload manual de arquivo</span>
 
-        <input type="file" id="file-input" accept={TiposArquivosPermitidos} onChange={handleFileChange} style={{ display: 'none' }} />
-        {!file && (
+        <input type="file" id="file-input" accept={TiposArquivosPermitidos} onChange={OnChangeArquivo} style={{ display: 'none' }} />
+        {!arquivo && (
           <PrimaryButton onClick={() => document.getElementById('file-input')!.click()} iconProps={{ iconName: 'BulkUpload' }} style={{ width: '250px' }}>
             {VerificarSeExisteViagens() ? 'Escolha outro arquivo' : 'Escolha seu arquivo'}
           </PrimaryButton>
         )}
-        {OnRenderFileType()}
+        {RenderTipoArquivo()}
         {VerificarSeExisteViagens() && RenderizarTabelaDeViagens()}
       </Stack>
     </Stack>
   );
 };
 
-export default styled<IFileUploadProps, IFileUploadStylesProps, IFileUploadStyles>(FileUpload, getStyles);
+export default styled<IUploadArquivoProps, IUploadArquivoStylesProps, IUploadArquivoStyles>(UploadArquivo, getStyles);

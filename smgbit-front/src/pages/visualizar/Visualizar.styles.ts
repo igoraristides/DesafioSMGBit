@@ -1,7 +1,7 @@
 import { IStyleFunction } from '@fluentui/react';
-import { IFreteStyles, IFreteStylesProps } from './Frete.types';
+import { IVisualizarStyles, IVisualizarStylesProps } from './Visualizar.types';
 
-export const getStyles: IStyleFunction<IFreteStylesProps, IFreteStyles> = (props) => ({
+export const getStyles: IStyleFunction<IVisualizarStylesProps, IVisualizarStyles> = (props) => ({
   root: {
     height: '100%',
     width: '100%',

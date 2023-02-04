@@ -14,6 +14,6 @@ export interface IMenuStyles {
 
 export enum NavKeys {
   UPLOAD = 'upload',
-  VISUALIZAR = 'view-trip',
+  VISUALIZAR = 'visualizar',
   FRETE = 'fretes',
 }

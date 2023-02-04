@@ -33,7 +33,10 @@ namespace Infraestrutura.Repositorios
         {
             using Contexto banco = new(_optionsbuilder);
 
-            //"Entregas/Paradas" e "KmRodados" retirados da comparação devido o fato de possuir numeros randomicos graças a função RANDBETWEEN
+            //Validação retirada pois como os dados são gerados randomicamente pela função RANDBETWEEN, acabam por se tornar novos dados
+
+
+            ////"Entregas/Paradas" e "KmRodados" retirados da comparação devido o fato de possuir numeros randomicos graças a função RANDBETWEEN
 
             //var viagemExisteNaBase = await banco.Set<TabelaViagem>().FirstOrDefaultAsync(v =>
             //    v.DataViagem == viagens.DataViagem &&
@@ -49,7 +52,7 @@ namespace Infraestrutura.Repositorios
 
             //if (viagemExisteNaBase == null)
             //{
-                await banco.Set<TabelaViagem>().AddAsync(viagens);
+            await banco.Set<TabelaViagem>().AddAsync(viagens);
                 await banco.SaveChangesAsync();
             //}
         }

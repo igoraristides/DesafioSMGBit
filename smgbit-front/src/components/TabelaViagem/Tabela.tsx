@@ -22,7 +22,7 @@ const Tabela: React.FC<ITabelaProps> = (props) => {
 
   return (
     <Stack verticalFill horizontalAlign="center" padding={15}>
-      {titulo && <span className={classNames.tableLabel}>{titulo}</span>}
+      {titulo && <span className={classNames.labelTabela}>{titulo}</span>}
 
       <div className={classNames.tabelaB}>
         <DetailsList items={todosItens} columns={colunas} checkboxVisibility={CheckboxVisibility.hidden} selectionMode={SelectionMode.none} />
